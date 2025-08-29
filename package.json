@@ -1,7 +1,7 @@
 {
   "name": "personal-portfolio",
   "type": "module",
-  "homepage": "https://rezuanul-islam-fahim.github.io/personal-portfolio",
+  "homepage": "https://www.rezuanulislamfahim.me",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
