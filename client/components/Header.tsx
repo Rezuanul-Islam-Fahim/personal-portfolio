@@ -80,6 +80,22 @@ export default function Header() {
         </div>
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+          {/* Social Links */}
+          {quickSocialLinks.map((social) => (
+            <Button
+              key={social.name}
+              variant="ghost"
+              size="icon"
+              asChild
+              className="hover:glow-neon transition-all duration-300"
+            >
+              <a href={social.href} target="_blank" rel="noopener noreferrer">
+                <social.icon className="h-4 w-4" />
+                <span className="sr-only">{social.name}</span>
+              </a>
+            </Button>
+          ))}
+
           <Button
             variant="ghost"
             size="icon"
