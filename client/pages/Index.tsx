@@ -108,9 +108,9 @@ export default function Index() {
                 </span>
               </h1>
               <div className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Full-stack developer and AI enthusiast crafting{" "}
-                <span className="text-primary font-semibold">innovative solutions</span>{" "}
-                that bridge technology and creativity
+                Flutter expert and full-stack developer crafting{" "}
+                <span className="text-primary font-semibold">cross-platform applications</span>{" "}
+                and <span className="text-accent font-semibold">innovative solutions</span>
               </div>
             </div>
             
