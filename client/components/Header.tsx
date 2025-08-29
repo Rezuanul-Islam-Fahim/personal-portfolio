@@ -93,12 +93,16 @@ export default function Header() {
       
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden" role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)}></div>
+        <div className="lg:hidden fixed inset-0 z-50" role="dialog" aria-modal="true">
+          <div
+            className="fixed inset-0 bg-background/90 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          ></div>
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto backdrop-blur-glass px-6 py-6 sm:max-w-sm border-l border-border/50">
             <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5">
-                <span className="text-2xl font-bold text-gradient">
+              <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+                <span className="text-xl font-bold text-gradient">
                   &lt;DevFolio/&gt;
                 </span>
               </Link>
