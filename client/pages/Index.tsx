@@ -1,4 +1,4 @@
-import { ArrowRight, Download, ExternalLink, Github, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Download, ExternalLink, Github, Mail, MapPin, Phone, Code, Zap, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,8 +6,12 @@ import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 
 const skills = [
-  "React", "TypeScript", "Node.js", "Python", "JavaScript", "Next.js", 
-  "TailwindCSS", "PostgreSQL", "MongoDB", "AWS", "Docker", "Git"
+  { name: "React", level: 95, color: "from-blue-400 to-blue-600" },
+  { name: "TypeScript", level: 90, color: "from-blue-500 to-blue-700" },
+  { name: "Node.js", level: 88, color: "from-green-400 to-green-600" },
+  { name: "Python", level: 85, color: "from-yellow-400 to-yellow-600" },
+  { name: "Next.js", level: 92, color: "from-purple-400 to-purple-600" },
+  { name: "AWS", level: 80, color: "from-orange-400 to-orange-600" },
 ];
 
 const education = [
@@ -16,173 +20,212 @@ const education = [
     school: "Stanford University",
     year: "2022-2024",
     description: "Specialized in Machine Learning and Software Engineering. GPA: 3.9/4.0",
-    achievements: ["Dean's List", "Research Assistant", "Published 2 papers in AI conferences"]
+    achievements: ["Dean's List", "Research Assistant", "Published 2 papers in AI conferences"],
+    icon: "🎓"
   },
   {
     degree: "Bachelor of Science in Computer Engineering", 
     school: "University of California, Berkeley",
     year: "2018-2022",
     description: "Focused on full-stack development and algorithms. GPA: 3.8/4.0",
-    achievements: ["Summa Cum Laude", "President of Computer Science Club", "Hackathon Winner x3"]
+    achievements: ["Summa Cum Laude", "President of Computer Science Club", "Hackathon Winner x3"],
+    icon: "🏆"
   }
 ];
 
 const projects = [
   {
     title: "AI-Powered Task Manager",
-    description: "A smart productivity app that uses machine learning to prioritize tasks and predict completion times.",
-    tech: ["React", "TypeScript", "Python", "TensorFlow", "PostgreSQL"],
+    description: "Smart productivity app using ML to optimize workflows and predict completion times.",
+    tech: ["React", "TypeScript", "Python", "TensorFlow"],
     image: "/placeholder.svg",
     github: "https://github.com",
     demo: "https://demo.com",
-    featured: true
+    featured: true,
+    gradient: "from-purple-500 to-pink-500"
   },
   {
     title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory management and payment processing.",
-    tech: ["Next.js", "Node.js", "Stripe", "MongoDB", "Redis"],
+    description: "Full-stack solution with real-time inventory and payment processing.",
+    tech: ["Next.js", "Node.js", "Stripe", "MongoDB"],
     image: "/placeholder.svg", 
     github: "https://github.com",
     demo: "https://demo.com",
-    featured: true
+    featured: true,
+    gradient: "from-cyan-500 to-blue-500"
   },
   {
-    title: "Real-time Chat Application",
-    description: "Scalable chat app with video calling, file sharing, and end-to-end encryption.",
-    tech: ["React", "Socket.io", "WebRTC", "Express", "PostgreSQL"],
+    title: "Real-time Chat App",
+    description: "Scalable chat with video calling and end-to-end encryption.",
+    tech: ["React", "Socket.io", "WebRTC", "Express"],
     image: "/placeholder.svg",
     github: "https://github.com",
     demo: "https://demo.com",
-    featured: false
+    featured: true,
+    gradient: "from-green-500 to-teal-500"
   }
+];
+
+const stats = [
+  { label: "Years Experience", value: "5+", icon: Code },
+  { label: "Projects Completed", value: "50+", icon: Rocket },
+  { label: "Technologies", value: "15+", icon: Zap },
 ];
 
 export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Alex Johnson
-              </span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Full-stack developer and AI enthusiast passionate about creating innovative solutions 
-              that make a difference. I specialize in modern web technologies and machine learning.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" asChild>
-                <Link to="/projects">
-                  View My Work <ArrowRight className="ml-2 h-4 w-4" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-grid bg-noise">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full opacity-20 animate-float"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-full opacity-30 animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full opacity-25 animate-float" style={{animationDelay: '4s'}}></div>
+        
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <p className="text-lg text-muted-foreground font-medium tracking-wide">
+                Welcome to my digital space
+              </p>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+                I'm{" "}
+                <span className="text-gradient animate-glow inline-block">
+                  Alex Johnson
+                </span>
+              </h1>
+              <div className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Full-stack developer and AI enthusiast crafting{" "}
+                <span className="text-primary font-semibold">innovative solutions</span>{" "}
+                that bridge technology and creativity
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+              <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon group">
+                <Link to="/projects" className="flex items-center gap-2">
+                  Explore My Work 
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg">
-                <Download className="mr-2 h-4 w-4" />
+              <Button variant="outline" size="lg" className="backdrop-blur-glass border-border/50 hover:bg-muted/50 group">
+                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Download CV
               </Button>
             </div>
           </div>
         </div>
-        
-        {/* Background gradient */}
-        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-          <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-accent opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
-        </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 sm:py-32 bg-muted/50">
+      {/* Stats Section */}
+      <section className="py-24 bg-muted/30 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About Me</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              I'm a passionate software engineer with expertise in full-stack development and artificial intelligence. 
-              With a strong foundation in computer science and hands-on experience building scalable applications, 
-              I enjoy solving complex problems and creating user-centric solutions.
-            </p>
-          </div>
-          
-          <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-                <span className="text-2xl font-bold text-primary">5+</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="mx-auto w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 glow-neon">
+                  <stat.icon className="h-10 w-10 text-white" />
+                </div>
+                <div className="text-4xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
               </div>
-              <h3 className="mt-6 text-lg font-semibold">Years Experience</h3>
-              <p className="mt-2 text-muted-foreground">Building web applications and solving complex problems</p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-                <span className="text-2xl font-bold text-primary">50+</span>
-              </div>
-              <h3 className="mt-6 text-lg font-semibold">Projects Completed</h3>
-              <p className="mt-2 text-muted-foreground">From startups to enterprise applications</p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
-                <span className="text-2xl font-bold text-primary">15+</span>
-              </div>
-              <h3 className="mt-6 text-lg font-semibold">Technologies</h3>
-              <p className="mt-2 text-muted-foreground">Modern tools and frameworks in my arsenal</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Skills & Technologies</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Here are the technologies and tools I work with to bring ideas to life.
-            </p>
-          </div>
-          
-          <div className="mt-16 flex flex-wrap justify-center gap-4">
-            {skills.map((skill) => (
-              <Badge key={skill} variant="secondary" className="px-4 py-2 text-base">
-                {skill}
-              </Badge>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="py-24 sm:py-32 bg-muted/50">
+      {/* About Section */}
+      <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Education</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              My educational journey that shaped my technical foundation and problem-solving approach.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl font-bold tracking-tight mb-6">
+                  About <span className="text-gradient">Me</span>
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  I'm a passionate software engineer with expertise in full-stack development and artificial intelligence. 
+                  With a strong foundation in computer science and hands-on experience building scalable applications, 
+                  I enjoy solving complex problems and creating user-centric solutions.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
+                  or sharing knowledge with the developer community.
+                </p>
+              </div>
+              <Button asChild variant="outline" className="group">
+                <Link to="/about" className="flex items-center gap-2">
+                  Learn More About Me
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold mb-6">Skills & Expertise</h3>
+              {skills.map((skill, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">{skill.name}</span>
+                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                  </div>
+                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                    <div 
+                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="py-24 sm:py-32 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold tracking-tight mb-6">
+              Educational <span className="text-gradient">Journey</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              My academic foundation that shaped my technical expertise and problem-solving approach.
             </p>
           </div>
           
-          <div className="mt-16 space-y-8">
+          <div className="space-y-8 max-w-4xl mx-auto">
             {education.map((edu, index) => (
-              <Card key={index} className="mx-auto max-w-4xl">
+              <Card key={index} className="backdrop-blur-glass border-border/50 hover:glow-neon transition-all duration-300 group">
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <CardTitle className="text-xl">{edu.degree}</CardTitle>
-                      <CardDescription className="text-lg font-medium">{edu.school}</CardDescription>
+                  <div className="flex items-start gap-4">
+                    <div className="text-3xl">{edu.icon}</div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <CardTitle className="text-xl group-hover:text-gradient transition-all">
+                          {edu.degree}
+                        </CardTitle>
+                        <Badge variant="outline" className="mt-2 sm:mt-0">{edu.year}</Badge>
+                      </div>
+                      <CardDescription className="text-lg font-medium text-primary">
+                        {edu.school}
+                      </CardDescription>
                     </div>
-                    <Badge variant="outline" className="mt-2 sm:mt-0">{edu.year}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{edu.description}</p>
                   <div className="space-y-2">
                     <h4 className="font-semibold">Key Achievements:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap gap-2">
                       {edu.achievements.map((achievement, i) => (
-                        <li key={i}>{achievement}</li>
+                        <Badge key={i} variant="secondary" className="text-xs">
+                          {achievement}
+                        </Badge>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -194,25 +237,30 @@ export default function Index() {
       {/* Featured Projects Section */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Featured Projects</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              A selection of my recent work that showcases my skills and passion for innovation.
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold tracking-tight mb-6">
+              Featured <span className="text-gradient">Projects</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A showcase of my recent work that demonstrates innovation, technical expertise, and creative problem-solving.
             </p>
           </div>
           
-          <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {projects.filter(p => p.featured).map((project, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-video bg-muted">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="h-full w-full object-cover"
-                  />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="backdrop-blur-glass border-border/50 overflow-hidden group hover:glow-neon transition-all duration-300">
+                <div className="relative">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+                  <div className="aspect-video bg-muted relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
+                  <CardTitle className="group-hover:text-gradient transition-all">{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -224,13 +272,13 @@ export default function Index() {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" asChild className="flex-1">
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
                         Code
                       </a>
                     </Button>
-                    <Button size="sm" asChild>
+                    <Button size="sm" asChild className="flex-1 bg-gradient-to-r from-primary to-accent">
                       <a href={project.demo} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Demo
@@ -243,9 +291,10 @@ export default function Index() {
           </div>
           
           <div className="mt-12 text-center">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/projects">
-                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+            <Button variant="outline" size="lg" asChild className="group">
+              <Link to="/projects" className="flex items-center gap-2">
+                View All Projects 
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
@@ -253,38 +302,48 @@ export default function Index() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 sm:py-32 bg-muted/50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Let's Work Together</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              I'm always interested in new opportunities and exciting projects. 
-              Let's connect and discuss how we can bring your ideas to life.
+      <section className="py-24 sm:py-32 bg-muted/30 relative">
+        <div className="absolute inset-0 bg-grid opacity-30"></div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold tracking-tight mb-6">
+              Let's <span className="text-gradient">Connect</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Ready to bring your next project to life? I'm always excited to discuss new opportunities 
+              and collaborate on innovative solutions.
             </p>
           </div>
           
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <Mail className="mx-auto h-8 w-8 text-primary" />
-              <h3 className="mt-4 text-lg font-semibold">Email</h3>
-              <p className="mt-2 text-muted-foreground">alex.johnson@email.com</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center group">
+              <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 glow-neon">
+                <Mail className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Email</h3>
+              <p className="text-muted-foreground">alex.johnson@email.com</p>
             </div>
-            <div className="text-center">
-              <Phone className="mx-auto h-8 w-8 text-primary" />
-              <h3 className="mt-4 text-lg font-semibold">Phone</h3>
-              <p className="mt-2 text-muted-foreground">+1 (555) 123-4567</p>
+            <div className="text-center group">
+              <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 glow-neon">
+                <Phone className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Phone</h3>
+              <p className="text-muted-foreground">+1 (555) 123-4567</p>
             </div>
-            <div className="text-center">
-              <MapPin className="mx-auto h-8 w-8 text-primary" />
-              <h3 className="mt-4 text-lg font-semibold">Location</h3>
-              <p className="mt-2 text-muted-foreground">San Francisco, CA</p>
+            <div className="text-center group">
+              <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 glow-neon">
+                <MapPin className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Location</h3>
+              <p className="text-muted-foreground">San Francisco, CA</p>
             </div>
           </div>
           
-          <div className="mt-12 text-center">
-            <Button size="lg" asChild>
-              <Link to="/contact">
-                Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+          <div className="text-center">
+            <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon group">
+              <Link to="/contact" className="flex items-center gap-2">
+                Start a Conversation
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
