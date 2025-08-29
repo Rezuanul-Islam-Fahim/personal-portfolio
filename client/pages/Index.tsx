@@ -5,12 +5,23 @@ import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 
-const skills = [
+const coreSkills = [
+  "Flutter", "Dart", "React", "React Native", "TypeScript", "JavaScript",
+  "Node.js", "Express.js", "Next.js", "Vue.js", "Angular", "Python",
+  "Django", "FastAPI", "Java", "Spring Boot", "Kotlin", "Swift",
+  "Firebase", "MongoDB", "PostgreSQL", "MySQL", "Redis", "AWS",
+  "Docker", "Kubernetes", "Git", "GraphQL", "REST APIs", "Microservices"
+];
+
+const skillLevels = [
+  { name: "Flutter", level: 98, color: "from-cyan-400 to-blue-600" },
+  { name: "Dart", level: 96, color: "from-blue-400 to-cyan-600" },
   { name: "React", level: 95, color: "from-blue-400 to-blue-600" },
-  { name: "TypeScript", level: 90, color: "from-blue-500 to-blue-700" },
+  { name: "TypeScript", level: 92, color: "from-blue-500 to-blue-700" },
+  { name: "React Native", level: 90, color: "from-purple-400 to-blue-500" },
   { name: "Node.js", level: 88, color: "from-green-400 to-green-600" },
   { name: "Python", level: 85, color: "from-yellow-400 to-yellow-600" },
-  { name: "Next.js", level: 92, color: "from-purple-400 to-purple-600" },
+  { name: "Firebase", level: 92, color: "from-orange-400 to-red-500" },
   { name: "AWS", level: 80, color: "from-orange-400 to-orange-600" },
 ];
 
