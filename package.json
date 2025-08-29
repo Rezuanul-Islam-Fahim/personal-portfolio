@@ -1,14 +1,6 @@
 {
   "name": "personal-portfolio",
   "type": "module",
-  "pkg": {
-    "assets": [
-      "dist/spa/*"
-    ],
-    "scripts": [
-      "dist/server/**/*.js"
-    ]
-  },
   "homepage": "https://rezuanul-islam-fahim.github.io/personal-portfolio",
   "scripts": {
     "dev": "vite",
