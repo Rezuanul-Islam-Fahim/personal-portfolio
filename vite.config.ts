@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [react()],
-  base: "/personal-portfolio/",
+  base: "/",
   build: {
     outDir: "dist",
     emptyOutDir: true,
