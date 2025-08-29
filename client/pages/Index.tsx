@@ -187,47 +187,23 @@ export default function Index() {
               Skills & <span className="text-gradient">Expertise</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of my technical skills and the technologies I work with to bring ideas to life.
+              Here are the technologies and tools I work with to bring ideas to life.
             </p>
           </div>
 
-          {/* Core Skills Grid */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">
-              <span className="text-gradient">Core Technologies</span>
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {coreSkills.map((skill, index) => (
-                <Badge
-                  key={skill}
-                  variant="secondary"
-                  className={`px-4 py-2 text-base backdrop-blur-glass border-border/50 hover:glow-neon transition-all duration-300 cursor-default ${
-                    skill === "Flutter" ? "bg-gradient-to-r from-primary to-accent text-white font-semibold scale-110" : ""
-                  }`}
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {/* Skill Levels */}
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-center mb-12">
-              <span className="text-gradient">Proficiency Levels</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {skillLevels.map((skill, index) => (
-                <div key={index} className="space-y-3 group">
+                <div key={index} className="space-y-2 group">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-lg group-hover:text-gradient transition-all">
+                    <span className="font-medium text-lg group-hover:text-gradient transition-all">
                       {skill.name}
                     </span>
                     <span className="text-sm text-muted-foreground font-medium">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="h-3 bg-muted rounded-full overflow-hidden backdrop-blur-glass">
+                  <div className="h-2 bg-muted rounded-full overflow-hidden backdrop-blur-glass">
                     <div
                       className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out group-hover:glow-neon`}
                       style={{ width: `${skill.level}%` }}
