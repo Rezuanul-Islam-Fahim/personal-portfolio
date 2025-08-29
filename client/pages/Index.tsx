@@ -93,7 +93,7 @@ export default function Index() {
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
                 I'm{" "}
                 <span className="text-gradient animate-glow inline-block">
-                  Alex Johnson
+                  Rezuanul Islam Fahim
                 </span>
               </h1>
               <div className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
