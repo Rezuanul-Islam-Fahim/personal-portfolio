@@ -191,41 +191,63 @@ export default function Index() {
               My academic foundation that shaped my technical expertise and problem-solving approach.
             </p>
           </div>
-          
-          <div className="space-y-8 max-w-4xl mx-auto">
-            {education.map((edu, index) => (
-              <Card key={index} className="backdrop-blur-glass border-border/50 hover:glow-neon transition-all duration-300 group">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl">{edu.icon}</div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <CardTitle className="text-xl group-hover:text-gradient transition-all">
-                          {edu.degree}
-                        </CardTitle>
-                        <Badge variant="outline" className="mt-2 sm:mt-0">{edu.year}</Badge>
-                      </div>
-                      <CardDescription className="text-lg font-medium text-primary">
-                        {edu.school}
-                      </CardDescription>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary"></div>
+
+              <div className="space-y-12">
+                {education.map((edu, index) => (
+                  <div key={index} className="relative group">
+                    {/* Timeline Dot */}
+                    <div className="absolute left-6 w-5 h-5 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-transform duration-300 glow-neon"></div>
+
+                    {/* Content */}
+                    <div className="ml-20">
+                      <Card className="backdrop-blur-glass border-border/50 hover:glow-neon transition-all duration-300 group-hover:translate-x-2">
+                        <CardHeader className="pb-4">
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="flex items-center gap-3">
+                              <div className="text-3xl">{edu.icon}</div>
+                              <Badge variant="outline" className="px-3 py-1">
+                                {edu.year}
+                              </Badge>
+                            </div>
+                          </div>
+                          <CardTitle className="text-xl group-hover:text-gradient transition-all duration-300">
+                            {edu.degree}
+                          </CardTitle>
+                          <CardDescription className="text-lg font-medium text-primary">
+                            {edu.school}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-muted-foreground mb-4 leading-relaxed">
+                            {edu.description}
+                          </p>
+                          <div className="space-y-3">
+                            <h4 className="font-semibold text-sm uppercase tracking-wide text-primary">
+                              Key Achievements
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                              {edu.achievements.map((achievement, i) => (
+                                <Badge key={i} variant="secondary" className="text-xs hover:bg-primary/20 transition-colors">
+                                  {achievement}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{edu.description}</p>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold">Key Achievements:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {edu.achievements.map((achievement, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">
-                          {achievement}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+
+              {/* Timeline End Dot */}
+              <div className="absolute left-6 bottom-0 w-5 h-5 bg-gradient-to-br from-accent to-primary rounded-full border-4 border-background shadow-lg animate-pulse"></div>
+            </div>
           </div>
         </div>
       </section>
