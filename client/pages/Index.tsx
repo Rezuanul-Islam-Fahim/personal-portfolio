@@ -98,6 +98,44 @@ const stats = [
   { label: "Technologies", value: "15+", icon: Zap },
 ];
 
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/your-profile",
+    icon: Linkedin,
+    color: "hover:text-blue-500",
+    bgColor: "from-blue-500 to-blue-600"
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/your-username",
+    icon: Github,
+    color: "hover:text-gray-400",
+    bgColor: "from-gray-700 to-gray-800"
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/your-handle",
+    icon: Twitter,
+    color: "hover:text-blue-400",
+    bgColor: "from-blue-400 to-blue-500"
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/your-handle",
+    icon: Instagram,
+    color: "hover:text-pink-500",
+    bgColor: "from-pink-500 to-purple-600"
+  },
+  {
+    name: "YouTube",
+    url: "https://youtube.com/@your-channel",
+    icon: Youtube,
+    color: "hover:text-red-500",
+    bgColor: "from-red-500 to-red-600"
+  }
+];
+
 export default function Index() {
   return (
     <Layout>
