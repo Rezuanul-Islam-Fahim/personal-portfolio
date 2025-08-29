@@ -14,7 +14,11 @@ const navigation = [
 
 const quickSocialLinks = [
   { name: "GitHub", href: "https://github.com/your-username", icon: Github },
-  { name: "LinkedIn", href: "https://linkedin.com/in/your-profile", icon: Linkedin },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/your-profile",
+    icon: Linkedin,
+  },
 ];
 
 export default function Header() {
@@ -24,7 +28,10 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-glass border-b border-border/50">
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 group">
             <div className="relative">
@@ -35,7 +42,7 @@ export default function Header() {
             </div>
           </Link>
         </div>
-        
+
         <div className="flex lg:hidden items-center gap-3">
           <Button
             variant="ghost"
@@ -54,10 +61,13 @@ export default function Header() {
             className="group"
           >
             <span className="sr-only">Open main menu</span>
-            <Menu className="h-6 w-6 group-hover:text-primary transition-colors" aria-hidden="true" />
+            <Menu
+              className="h-6 w-6 group-hover:text-primary transition-colors"
+              aria-hidden="true"
+            />
           </Button>
         </div>
-        
+
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
@@ -67,18 +77,22 @@ export default function Header() {
                 "relative text-sm font-semibold leading-6 transition-all duration-300 hover:text-primary group",
                 location.pathname === item.href
                   ? "text-primary"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground",
               )}
             >
               {item.name}
-              <span className={cn(
-                "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300",
-                location.pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-              )}></span>
+              <span
+                className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300",
+                  location.pathname === item.href
+                    ? "w-full"
+                    : "w-0 group-hover:w-full",
+                )}
+              ></span>
             </Link>
           ))}
         </div>
-        
+
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
           {/* Social Links */}
           {quickSocialLinks.map((social) => (
@@ -106,15 +120,22 @@ export default function Header() {
             <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Button asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon transition-all duration-300">
+          <Button
+            asChild
+            className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon transition-all duration-300"
+          >
             <Link to="/contact">Get in touch</Link>
           </Button>
         </div>
       </nav>
-      
+
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50" role="dialog" aria-modal="true">
+        <div
+          className="lg:hidden fixed inset-0 z-50"
+          role="dialog"
+          aria-modal="true"
+        >
           <div
             className="fixed inset-0 bg-background/90 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
@@ -122,7 +143,11 @@ export default function Header() {
           ></div>
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto backdrop-blur-glass px-6 py-6 sm:max-w-sm border-l border-border/50">
             <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                to="/"
+                className="-m-1.5 p-1.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <span className="text-xl font-bold text-gradient">
                   &lt;DevFolio/&gt;
                 </span>
@@ -134,7 +159,10 @@ export default function Header() {
                 className="group"
               >
                 <span className="sr-only">Close menu</span>
-                <X className="h-6 w-6 group-hover:text-primary transition-colors" aria-hidden="true" />
+                <X
+                  className="h-6 w-6 group-hover:text-primary transition-colors"
+                  aria-hidden="true"
+                />
               </Button>
             </div>
             <div className="mt-6 flow-root">
@@ -149,7 +177,7 @@ export default function Header() {
                         "-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-300 hover:bg-muted/50",
                         location.pathname === item.href
                           ? "text-primary bg-muted/30"
-                          : "text-foreground"
+                          : "text-foreground",
                       )}
                     >
                       {item.name}
@@ -157,8 +185,14 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-6 space-y-4">
-                  <Button asChild className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80">
-                    <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button
+                    asChild
+                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
+                  >
+                    <Link
+                      to="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Get in touch
                     </Link>
                   </Button>
@@ -173,7 +207,11 @@ export default function Header() {
                         asChild
                         className="hover:glow-neon transition-all duration-300"
                       >
-                        <a href={social.href} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <social.icon className="h-5 w-5" />
                           <span className="sr-only">{social.name}</span>
                         </a>
