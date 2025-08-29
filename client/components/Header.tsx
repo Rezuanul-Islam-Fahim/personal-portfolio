@@ -23,7 +23,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 group">
             <div className="relative">
-              <span className="text-2xl font-bold text-gradient animate-glow">
+              <span className="text-lg font-bold text-gradient animate-glow">
                 &lt;DevFolio/&gt;
               </span>
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
