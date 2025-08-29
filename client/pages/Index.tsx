@@ -67,7 +67,7 @@ const projects = [
 ];
 
 const stats = [
-  { label: "Years Experience", value: "5+", icon: Code },
+  { label: "Years Experience", value: "10+", icon: Code },
   { label: "Projects Completed", value: "50+", icon: Rocket },
   { label: "Technologies", value: "15+", icon: Zap },
 ];
