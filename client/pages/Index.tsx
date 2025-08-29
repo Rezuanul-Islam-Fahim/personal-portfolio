@@ -582,13 +582,38 @@ export default function Index() {
             </div>
           </div>
           
-          <div className="text-center">
+          <div className="text-center space-y-8">
             <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon group">
               <Link to="/contact" className="flex items-center gap-2">
                 Start a Conversation
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
+
+            {/* Social Media Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-muted-foreground">
+                Connect with me on social media
+              </h3>
+              <div className="flex justify-center items-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative"
+                  >
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.bgColor} flex items-center justify-center group-hover:scale-110 group-hover:glow-neon transition-all duration-300`}>
+                      <social.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {social.name}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
