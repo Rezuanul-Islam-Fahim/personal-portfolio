@@ -231,6 +231,142 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Upwork Hiring Section */}
+      <section className="py-24 sm:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-full opacity-25 animate-float" style={{animationDelay: '2s'}}></div>
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              Available for Hire
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              Let's Work Together on <span className="text-gradient">Upwork</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Ready to bring your app idea to life? With 10+ years of experience and expertise in Flutter development,
+              I deliver high-quality, cross-platform applications that exceed expectations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Benefits */}
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold mb-6">
+                Why Choose Me for Your <span className="text-gradient">Project</span>?
+              </h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Star className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-gradient transition-colors">
+                      Top-Rated Freelancer
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Proven track record with 5-star ratings and satisfied clients worldwide
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Clock className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-gradient transition-colors">
+                      Fast Delivery
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Quick turnaround times without compromising on quality or attention to detail
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2 group-hover:text-gradient transition-colors">
+                      24/7 Communication
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Clear communication and regular updates throughout the project lifecycle
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Services */}
+            <div className="backdrop-blur-glass border border-border/50 rounded-2xl p-8 glow-neon">
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                <span className="text-gradient">Services I Offer</span>
+              </h3>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                  <span className="text-lg">Flutter Mobile App Development</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                  <span className="text-lg">Cross-Platform Development</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                  <span className="text-lg">React Native Development</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                  <span className="text-lg">Full-Stack Web Development</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                  <span className="text-lg">API Development & Integration</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                  <span className="text-lg">UI/UX Implementation</span>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <Button size="lg" asChild className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 glow-neon group">
+                  <a
+                    href="https://www.upwork.com/freelancers/~your-upwork-profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3.002-2.439-5.453-5.439-5.453z"/>
+                    </svg>
+                    Hire Me on Upwork
+                    <ExternalLink className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                  </a>
+                </Button>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Start your project today with a free consultation
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Education Section */}
       <section className="py-24 sm:py-32 bg-muted/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
