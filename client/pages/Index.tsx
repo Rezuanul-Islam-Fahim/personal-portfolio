@@ -106,13 +106,9 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
               <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon group">
                 <Link to="/projects" className="flex items-center gap-2">
-                  Explore My Work 
+                  Explore My Work
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="backdrop-blur-glass border-border/50 hover:bg-muted/50 group">
-                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Download CV
               </Button>
             </div>
           </div>
