@@ -167,13 +167,30 @@ export default function Index() {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+            <div className="flex flex-col items-center justify-center gap-6 pt-8">
               <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon group">
                 <Link to="/projects" className="flex items-center gap-2">
                   Explore My Work
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
+
+              {/* Quick Social Links */}
+              <div className="flex items-center gap-4">
+                <span className="text-sm text-muted-foreground">Follow me:</span>
+                {socialLinks.slice(0, 4).map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-muted-foreground ${social.color} transition-colors duration-300 hover:scale-110 transform`}
+                  >
+                    <social.icon className="h-5 w-5" />
+                    <span className="sr-only">{social.name}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
