@@ -146,22 +146,27 @@ export default function Index() {
       {/* About Section */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-4xl font-bold tracking-tight mb-6">
-                  About <span className="text-gradient">Me</span>
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  I'm a passionate software engineer with expertise in full-stack development and artificial intelligence. 
-                  With a strong foundation in computer science and hands-on experience building scalable applications, 
-                  I enjoy solving complex problems and creating user-centric solutions.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-                  or sharing knowledge with the developer community.
-                </p>
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold tracking-tight mb-8">
+              About <span className="text-gradient">Me</span>
+            </h2>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                I'm a passionate mobile and full-stack developer with over 10 years of experience crafting
+                innovative applications. My core expertise lies in <span className="text-primary font-semibold">Flutter development</span>,
+                where I've built countless cross-platform applications that deliver exceptional user experiences.
+              </p>
+              <p>
+                Beyond Flutter, I have extensive experience in web technologies, backend development, and cloud architecture.
+                I love turning complex problems into elegant solutions and am always eager to learn and adopt new technologies
+                that can improve development efficiency and user satisfaction.
+              </p>
+              <p>
+                When I'm not coding, you'll find me exploring emerging tech trends, contributing to open-source projects,
+                or mentoring fellow developers in the community.
+              </p>
+            </div>
+            <div className="mt-8">
               <Button asChild variant="outline" className="group">
                 <Link to="/about" className="flex items-center gap-2">
                   Learn More About Me
@@ -169,18 +174,62 @@ export default function Index() {
                 </Link>
               </Button>
             </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-6">Skills & Expertise</h3>
-              {skills.map((skill, index) => (
-                <div key={index} className="space-y-2">
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-24 sm:py-32 bg-muted/30 relative">
+        <div className="absolute inset-0 bg-grid opacity-30"></div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold tracking-tight mb-6">
+              Skills & <span className="text-gradient">Expertise</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A comprehensive overview of my technical skills and the technologies I work with to bring ideas to life.
+            </p>
+          </div>
+
+          {/* Core Skills Grid */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center mb-8">
+              <span className="text-gradient">Core Technologies</span>
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {coreSkills.map((skill, index) => (
+                <Badge
+                  key={skill}
+                  variant="secondary"
+                  className={`px-4 py-2 text-base backdrop-blur-glass border-border/50 hover:glow-neon transition-all duration-300 cursor-default ${
+                    skill === "Flutter" ? "bg-gradient-to-r from-primary to-accent text-white font-semibold scale-110" : ""
+                  }`}
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Skill Levels */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-12">
+              <span className="text-gradient">Proficiency Levels</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {skillLevels.map((skill, index) => (
+                <div key={index} className="space-y-3 group">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                    <span className="font-semibold text-lg group-hover:text-gradient transition-all">
+                      {skill.name}
+                    </span>
+                    <span className="text-sm text-muted-foreground font-medium">
+                      {skill.level}%
+                    </span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div 
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+                  <div className="h-3 bg-muted rounded-full overflow-hidden backdrop-blur-glass">
+                    <div
+                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out group-hover:glow-neon`}
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
