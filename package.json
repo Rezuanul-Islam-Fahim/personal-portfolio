@@ -1,6 +1,5 @@
 {
-  "name": "fusion-starter",
-  "private": true,
+  "name": "personal-portfolio",
   "type": "module",
   "pkg": {
     "assets": [
@@ -13,15 +12,13 @@
   "homepage": "https://rezuanul-islam-fahim.github.io/personal-portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run build:client",
     "build:client": "vite build",
-    "build:server": "vite build --config vite.config.server.ts",
-    "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
     "typecheck": "tsc",
-    "predeploy": "npm run build:client",
-    "deploy": "gh-pages -d build:client"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
