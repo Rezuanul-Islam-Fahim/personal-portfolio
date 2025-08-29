@@ -156,12 +156,30 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 space-y-4">
                   <Button asChild className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80">
                     <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                       Get in touch
                     </Link>
                   </Button>
+
+                  {/* Mobile Social Links */}
+                  <div className="flex justify-center gap-4 pt-4">
+                    {quickSocialLinks.map((social) => (
+                      <Button
+                        key={social.name}
+                        variant="ghost"
+                        size="icon"
+                        asChild
+                        className="hover:glow-neon transition-all duration-300"
+                      >
+                        <a href={social.href} target="_blank" rel="noopener noreferrer">
+                          <social.icon className="h-5 w-5" />
+                          <span className="sr-only">{social.name}</span>
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
