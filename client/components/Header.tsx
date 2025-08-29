@@ -12,6 +12,11 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ];
 
+const quickSocialLinks = [
+  { name: "GitHub", href: "https://github.com/your-username", icon: Github },
+  { name: "LinkedIn", href: "https://linkedin.com/in/your-profile", icon: Linkedin },
+];
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
