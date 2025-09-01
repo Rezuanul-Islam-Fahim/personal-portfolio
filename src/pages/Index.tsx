@@ -720,21 +720,26 @@ export default function Index() {
                 <Mail className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground">alex.johnson@email.com</p>
+              <a
+                href="mailto:rifahim98@gmail.com"
+                className="text-muted-foreground hover:underline"
+              >
+                rifahim98@gmail.com
+              </a>
             </div>
             <div className="text-center group">
               <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 glow-neon">
                 <Phone className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Phone</h3>
-              <p className="text-muted-foreground">+1 (555) 123-4567</p>
+              <p className="text-muted-foreground">+8801815188895</p>
             </div>
             <div className="text-center group">
               <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 glow-neon">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Location</h3>
-              <p className="text-muted-foreground">San Francisco, CA</p>
+              <p className="text-muted-foreground">Kishoreganj, Dhaka, Bangladesh</p>
             </div>
           </div>
 
@@ -749,33 +754,6 @@ export default function Index() {
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-
-            {/* Social Media Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-muted-foreground">
-                Connect with me on social media
-              </h3>
-              <div className="flex justify-center items-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative"
-                  >
-                    <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.bgColor} flex items-center justify-center group-hover:scale-110 group-hover:glow-neon transition-all duration-300`}
-                    >
-                      <social.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {social.name}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
