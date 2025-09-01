@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Moon, Sun, Github, Linkedin } from "lucide-react";
+import { Menu, X, Moon, Sun, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
@@ -13,11 +13,23 @@ const navigation = [
 ];
 
 const quickSocialLinks = [
-  { name: "GitHub", href: "https://github.com/your-username", icon: Github },
+  {
+    name: "GitHub",
+    href: "https://github.com/Rezuanul-Islam-Fahim",
+    icon: Github,
+    bgColor: "from-gray-700 to-gray-800",
+  },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/rezuanul-islam-fahim/",
     icon: Linkedin,
+    bgColor: "from-blue-500 to-blue-600",
+  },
+  {
+    name: "Twitter",
+    href: "https://x.com/rezuanul_fahim",
+    icon: Twitter,
+    bgColor: "from-sky-400 to-sky-500",
   },
 ];
 
@@ -96,18 +108,16 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
           {/* Social Links */}
           {quickSocialLinks.map((social) => (
-            <Button
+            <a
               key={social.name}
-              variant="ghost"
-              size="icon"
-              asChild
-              className="hover:glow-neon transition-all duration-300"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br ${social.bgColor} shadow-md transform transition-transform duration-300 hover:scale-110`}
             >
-              <a href={social.href} target="_blank" rel="noopener noreferrer">
-                <social.icon className="h-4 w-4" />
-                <span className="sr-only">{social.name}</span>
-              </a>
-            </Button>
+              <social.icon className="h-4 w-4 text-white" />
+              <span className="sr-only">{social.name}</span>
+            </a>
           ))}
 
           <Button
@@ -200,22 +210,16 @@ export default function Header() {
                   {/* Mobile Social Links */}
                   <div className="flex justify-center gap-4 pt-4">
                     {quickSocialLinks.map((social) => (
-                      <Button
+                      <a
                         key={social.name}
-                        variant="ghost"
-                        size="icon"
-                        asChild
-                        className="hover:glow-neon transition-all duration-300"
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br ${social.bgColor} shadow-md transform transition-transform duration-300 hover:scale-110`}
                       >
-                        <a
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <social.icon className="h-5 w-5" />
-                          <span className="sr-only">{social.name}</span>
-                        </a>
-                      </Button>
+                        <social.icon className="h-5 w-5 text-white" />
+                        <span className="sr-only">{social.name}</span>
+                      </a>
                     ))}
                   </div>
                 </div>

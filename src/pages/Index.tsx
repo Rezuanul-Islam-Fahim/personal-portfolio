@@ -64,14 +64,12 @@ const coreSkills = [
 const skillLevels = [
   { name: "Flutter", level: 98, color: "from-cyan-400 to-blue-600" },
   { name: "Dart", level: 96, color: "from-blue-400 to-cyan-600" },
-  { name: "React", level: 95, color: "from-blue-400 to-blue-600" },
   { name: "TypeScript", level: 92, color: "from-blue-500 to-blue-700" },
   { name: "React Native", level: 90, color: "from-purple-400 to-blue-500" },
   { name: "Node.js", level: 88, color: "from-green-400 to-green-600" },
   { name: "JavaScript", level: 94, color: "from-yellow-400 to-yellow-600" },
   { name: "Python", level: 85, color: "from-green-400 to-yellow-500" },
   { name: "Firebase", level: 92, color: "from-orange-400 to-red-500" },
-  { name: "AWS", level: 80, color: "from-orange-400 to-orange-600" },
   { name: "Next.js", level: 89, color: "from-gray-400 to-gray-600" },
   { name: "Vue.js", level: 82, color: "from-green-400 to-green-600" },
   { name: "MongoDB", level: 87, color: "from-green-500 to-green-700" },
@@ -164,25 +162,25 @@ const stats = [
 
 const socialLinks = [
   {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/your-profile",
+  name: "LinkedIn",
+  url: "https://www.linkedin.com/in/rezuanul-islam-fahim/",
     icon: Linkedin,
     color: "hover:text-blue-500",
     bgColor: "from-blue-500 to-blue-600",
   },
   {
-    name: "GitHub",
-    url: "https://github.com/your-username",
+  name: "GitHub",
+  url: "https://github.com/Rezuanul-Islam-Fahim",
     icon: Github,
     color: "hover:text-gray-400",
     bgColor: "from-gray-700 to-gray-800",
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/your-handle",
+  name: "Twitter",
+  url: "https://x.com/rezuanul_fahim",
     icon: Twitter,
-    color: "hover:text-blue-400",
-    bgColor: "from-blue-400 to-blue-500",
+  color: "hover:text-sky-400",
+  bgColor: "from-sky-400 to-sky-500",
   },
   {
     name: "Instagram",
@@ -253,25 +251,6 @@ export default function Index() {
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-
-              {/* Quick Social Links */}
-              <div className="flex items-center gap-4">
-                <span className="text-sm text-muted-foreground">
-                  Follow me:
-                </span>
-                {socialLinks.slice(0, 4).map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`text-muted-foreground ${social.color} transition-colors duration-300 hover:scale-110 transform`}
-                  >
-                    <social.icon className="h-5 w-5" />
-                    <span className="sr-only">{social.name}</span>
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </div>
