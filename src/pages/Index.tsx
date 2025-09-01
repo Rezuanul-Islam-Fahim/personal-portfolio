@@ -31,65 +31,41 @@ import { Link } from "react-router-dom";
 const coreSkills = [
   "Flutter",
   "Dart",
-  "React",
-  "React Native",
+  "React.js",
+  "Next.js",
   "TypeScript",
-  "JavaScript",
   "Node.js",
   "Express.js",
-  "Next.js",
-  "Vue.js",
-  "Angular",
-  "Python",
-  "Django",
-  "FastAPI",
-  "Java",
-  "Spring Boot",
-  "Kotlin",
-  "Swift",
   "Firebase",
   "MongoDB",
   "PostgreSQL",
-  "MySQL",
-  "Redis",
-  "AWS",
-  "Docker",
-  "Kubernetes",
-  "Git",
-  "GraphQL",
+  "Stripe",
+  "Twilio",
+  "Google Maps",
+  "Tailwind CSS",
   "REST APIs",
-  "Microservices",
+  "CI/CD",
+  "Docker",
+  "Git",
 ];
 
 const skillLevels = [
-  { name: "Flutter", level: 98, color: "from-cyan-400 to-blue-600" },
-  { name: "Dart", level: 96, color: "from-blue-400 to-cyan-600" },
-  { name: "TypeScript", level: 92, color: "from-blue-500 to-blue-700" },
-  { name: "React Native", level: 90, color: "from-purple-400 to-blue-500" },
-  { name: "Node.js", level: 88, color: "from-green-400 to-green-600" },
-  { name: "JavaScript", level: 94, color: "from-yellow-400 to-yellow-600" },
-  { name: "Python", level: 85, color: "from-green-400 to-yellow-500" },
-  { name: "Firebase", level: 92, color: "from-orange-400 to-red-500" },
-  { name: "Next.js", level: 89, color: "from-gray-400 to-gray-600" },
-  { name: "Vue.js", level: 82, color: "from-green-400 to-green-600" },
-  { name: "MongoDB", level: 87, color: "from-green-500 to-green-700" },
-  { name: "PostgreSQL", level: 84, color: "from-blue-500 to-indigo-600" },
-  { name: "Express.js", level: 86, color: "from-gray-500 to-gray-700" },
-  { name: "REST APIs", level: 93, color: "from-indigo-400 to-purple-500" },
-  { name: "GraphQL", level: 78, color: "from-pink-400 to-rose-500" },
+  { name: "Flutter", level: 96, color: "from-cyan-400 to-blue-600" },
+  { name: "Dart", level: 94, color: "from-blue-400 to-cyan-600" },
+  { name: "React.js", level: 92, color: "from-blue-400 to-blue-600" },
+  { name: "Next.js", level: 90, color: "from-gray-400 to-gray-600" },
+  { name: "TypeScript", level: 92, color: "from-indigo-400 to-indigo-600" },
+  { name: "Express.js", level: 88, color: "from-gray-500 to-gray-700" },
+  { name: "Firebase", level: 90, color: "from-orange-400 to-red-500" },
+  { name: "MongoDB", level: 86, color: "from-green-500 to-green-700" },
+  { name: "PostgreSQL", level: 82, color: "from-blue-500 to-indigo-600" },
+  { name: "Tailwind CSS", level: 90, color: "from-sky-400 to-indigo-500" },
   { name: "Docker", level: 75, color: "from-blue-400 to-blue-600" },
+  { name: "CI/CD", level: 80, color: "from-green-400 to-emerald-600" },
   { name: "Git", level: 95, color: "from-red-400 to-red-600" },
-  { name: "Redux", level: 88, color: "from-purple-400 to-purple-600" },
-  { name: "Material Design", level: 91, color: "from-blue-400 to-green-500" },
-  { name: "iOS Development", level: 83, color: "from-gray-400 to-gray-600" },
-  {
-    name: "Android Development",
-    level: 85,
-    color: "from-green-400 to-green-600",
-  },
-  { name: "Supabase", level: 79, color: "from-green-400 to-teal-500" },
+  { name: "REST APIs", level: 93, color: "from-indigo-400 to-purple-500" },
 ];
-
+ 
 const education = [
   {
     degree: "Master of Science in Computer Science",
@@ -155,9 +131,9 @@ const projects = [
 ];
 
 const stats = [
-  { label: "Years Experience", value: "6+", icon: Code },
+  { label: "Years Experience", value: "7+", icon: Code },
   { label: "Projects Completed", value: "50+", icon: Rocket },
-  { label: "Technologies", value: "15+", icon: Zap },
+  { label: "Technologies", value: "20+", icon: Zap },
 ];
 
 const socialLinks = [
@@ -279,7 +255,7 @@ export default function Index() {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I’m a professional Flutter developer with 6+ years of experience building robust hybrid mobile applications for Android and iOS. I deliver
+                I’m a professional Flutter developer with 7+ years of experience building robust hybrid mobile applications for Android and iOS. I deliver
                 pixel-perfect UIs from Figma/Adobe XD, implement clean architecture (MVC/MVVM), and ship production-ready apps to the Play Store and App Store.
               </p>
               <p>
@@ -364,7 +340,7 @@ export default function Index() {
               <span className="text-gradient">Upwork</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ready to bring your idea to life? With 6+ years of experience in Flutter and Full Stack development, I deliver scalable, production-ready apps,
+              Ready to bring your idea to life? With 7+ years of experience in Flutter and Full Stack development, I deliver scalable, production-ready apps,
               polished UI/UX, and reliable backends — all with a focus on clean architecture and fast delivery.
             </p>
           </div>

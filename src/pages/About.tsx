@@ -11,7 +11,7 @@ export default function About() {
               About <span className="text-gradient">Me</span>
             </h1>
             <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              I’m a Software Engineer with 6+ years of experience building high-performance mobile and web applications using
+                I’m a Software Engineer with 7+ years of experience building high-performance mobile and web applications using
               Flutter, React, Node.js, and Firebase. I focus on clean architecture, modular code, and shipping production-ready
               applications with reliable backends and delightful user experiences.
             </p>
