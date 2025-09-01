@@ -155,7 +155,7 @@ const projects = [
 ];
 
 const stats = [
-  { label: "Years Experience", value: "10+", icon: Code },
+  { label: "Years Experience", value: "6+", icon: Code },
   { label: "Projects Completed", value: "50+", icon: Rocket },
   { label: "Technologies", value: "15+", icon: Zap },
 ];
@@ -229,14 +229,7 @@ export default function Index() {
                 </span>
               </h1>
               <div className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Flutter expert and full-stack developer crafting{" "}
-                <span className="text-primary font-semibold">
-                  cross-platform applications
-                </span>{" "}
-                and{" "}
-                <span className="text-accent font-semibold">
-                  innovative solutions
-                </span>
+                Flutter & full-stack engineer — building scalable, production-ready web and mobile apps.
               </div>
             </div>
 
@@ -286,26 +279,16 @@ export default function Index() {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a passionate mobile and full-stack developer with over 10
-                years of experience crafting innovative applications. My core
-                expertise lies in{" "}
-                <span className="text-primary font-semibold">
-                  Flutter development
-                </span>
-                , where I've built countless cross-platform applications that
-                deliver exceptional user experiences.
+                I’m a professional Flutter developer with 6+ years of experience building robust hybrid mobile applications for Android and iOS. I deliver
+                pixel-perfect UIs from Figma/Adobe XD, implement clean architecture (MVC/MVVM), and ship production-ready apps to the Play Store and App Store.
               </p>
               <p>
-                Beyond Flutter, I have extensive experience in web technologies,
-                backend development, and cloud architecture. I love turning
-                complex problems into elegant solutions and am always eager to
-                learn and adopt new technologies that can improve development
-                efficiency and user satisfaction.
+                As a Full Stack engineer, I build web apps using React/Next.js and Tailwind CSS, and backend APIs with Node.js, Express, and Firebase. I specialize in
+                real-time features (chat, notifications, live tracking), payments (Stripe, PayPal), auth flows (Email/OTP, role-based), and cloud functions.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring emerging tech
-                trends, contributing to open-source projects, or mentoring
-                fellow developers in the community.
+                I follow clean, modular patterns and deliver maintainable codebases. I’m comfortable integrating 3rd-party services like Twilio, Google Maps, and
+                various databases (MongoDB, Firestore, SQLite), and I wire CI/CD pipelines with GitHub Actions, Vercel, or Netlify.
               </p>
             </div>
             <div className="mt-8">
@@ -381,9 +364,8 @@ export default function Index() {
               <span className="text-gradient">Upwork</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ready to bring your app idea to life? With 10+ years of experience
-              and expertise in Flutter development, I deliver high-quality,
-              cross-platform applications that exceed expectations.
+              Ready to bring your idea to life? With 6+ years of experience in Flutter and Full Stack development, I deliver scalable, production-ready apps,
+              polished UI/UX, and reliable backends — all with a focus on clean architecture and fast delivery.
             </p>
           </div>
 
