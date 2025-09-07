@@ -1,0 +1,236 @@
+'use client';
+
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, Moon, Sun, Github, Linkedin, Twitter } from "lucide-react";
+import { Button } from "@/ui/button";
+import { useTheme } from "@/hooks/use-theme";
+import { cn } from "@/lib/utils";
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
+];
+
+const quickSocialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/Rezuanul-Islam-Fahim",
+    icon: Github,
+    bgColor: "from-gray-700 to-gray-800",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/rezuanul-islam-fahim/",
+    icon: Linkedin,
+    bgColor: "from-blue-500 to-blue-600",
+  },
+  {
+    name: "Twitter",
+    href: "https://x.com/rezuanul_fahim",
+    icon: Twitter,
+    bgColor: "from-sky-400 to-sky-500",
+  },
+];
+
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-glass border-b border-border/50">
+      <nav
+        className="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div className="flex lg:flex-1">
+          <Link href="/" className="-m-1.5 p-1.5 group">
+            <div className="relative">
+              <span className="text-lg font-bold text-gradient animate-glow">
+                &lt;DevFolio/&gt;
+              </span>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+            </div>
+          </Link>
+        </div>
+
+        <div className="flex lg:hidden items-center gap-3">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="relative overflow-hidden group"
+          >
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileMenuOpen(true)}
+            className="group"
+          >
+            <span className="sr-only">Open main menu</span>
+            <Menu
+              className="h-6 w-6 group-hover:text-primary transition-colors"
+              aria-hidden="true"
+            />
+          </Button>
+        </div>
+
+        <div className="hidden lg:flex lg:gap-x-12">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={cn(
+                "relative text-sm font-semibold leading-6 transition-all duration-300 hover:text-primary group",
+                pathname === item.href
+                  ? "text-primary"
+                  : "text-muted-foreground",
+              )}
+            >
+              {item.name}
+              <span
+                className={cn(
+                  "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300",
+                  pathname === item.href
+                    ? "w-full"
+                    : "w-0 group-hover:w-full",
+                )}
+              ></span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+          {/* Social Links */}
+          {quickSocialLinks.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br ${social.bgColor} shadow-md transform transition-transform duration-300 hover:scale-110`}
+            >
+              <social.icon className="h-4 w-4 text-white" />
+              <span className="sr-only">{social.name}</span>
+            </a>
+          ))}
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="relative overflow-hidden group glow-neon hover:glow-cyan transition-all duration-300"
+          >
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+          <Button
+            asChild
+            className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 glow-neon transition-all duration-300"
+          >
+            <Link href="/contact">Get in touch</Link>
+          </Button>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 z-50"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="fixed inset-0 bg-background/90 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          ></div>
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto backdrop-blur-glass px-6 py-6 sm:max-w-sm border-l border-border/50">
+            <div className="flex items-center justify-between">
+              <Link
+                href="/"
+                className="-m-1.5 p-1.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="text-xl font-bold text-gradient">
+                  &lt;DevFolio/&gt;
+                </span>
+              </Link>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMobileMenuOpen(false)}
+                className="group"
+              >
+                <span className="sr-only">Close menu</span>
+                <X
+                  className="h-6 w-6 group-hover:text-primary transition-colors"
+                  aria-hidden="true"
+                />
+              </Button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-border/50">
+                <div className="space-y-2 py-6">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={cn(
+                        "-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 transition-all duration-300 hover:bg-muted/50",
+                        pathname === item.href
+                          ? "text-primary bg-muted/30"
+                          : "text-foreground",
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+                <div className="py-6 space-y-4">
+                  <Button
+                    asChild
+                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80"
+                  >
+                    <Link
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Get in touch
+                    </Link>
+                  </Button>
+
+                  {/* Mobile Social Links */}
+                  <div className="flex justify-center gap-4 pt-4">
+                    {quickSocialLinks.map((social) => (
+                      <a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br ${social.bgColor} shadow-md transform transition-transform duration-300 hover:scale-110`}
+                      >
+                        <social.icon className="h-5 w-5 text-white" />
+                        <span className="sr-only">{social.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
