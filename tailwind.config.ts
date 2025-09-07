@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   darkMode: 'class',
@@ -84,7 +84,8 @@ const config: Config = {
         glow: {
           from: { boxShadow: '0 0 20px hsl(var(--primary) / 0.2)' },
           to: {
-            boxShadow: '0 0 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--accent) / 0.1)',
+            boxShadow:
+              '0 0 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--accent) / 0.1)',
           },
         },
       },
@@ -97,6 +98,6 @@ const config: Config = {
     },
   },
   plugins: [],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
