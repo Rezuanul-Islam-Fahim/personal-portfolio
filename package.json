@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Professional portfolio website built with Next.js and TypeScript",
   "author": "Rezuanul Islam Fahim",
-  "homepage": "https://www.rezuanulislamfahim.me",
   "repository": {
     "type": "git",
     "url": "https://github.com/Rezuanul-Islam-Fahim/personal-portfolio.git"
@@ -34,26 +33,27 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.539.0",
-    "next": "^15.5.2",
+    "next": "15.5.2",
     "next-themes": "^0.4.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "postcss": "^8.5.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "sharp": "^0.34.3",
     "sonner": "^1.7.4",
     "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.17",
     "uuid": "^12.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "@types/react": "^18.3.23",
-    "@types/react-dom": "^18.3.7",
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^15.5.2",
-    "postcss": "^8.4.47",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.2",
     "prettier": "^3.6.2",
     "rimraf": "^5.0.5",
-    "tailwindcss": "^3.4.16",
-    "typescript": "^5.9.2"
+    "typescript": "^5"
   }
 }
