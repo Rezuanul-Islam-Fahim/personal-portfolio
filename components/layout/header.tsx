@@ -56,7 +56,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="#home" className="text-2xl font-bold gradient-text">
-            Fahim
+            {`<Devfolio/>`}
           </Link>
 
           {/* Desktop Navigation */}
